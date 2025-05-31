@@ -1,0 +1,83 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    color: #333;
+    text-align: center;
+    padding: 2em;
+    min-height: 100vh;
+    background: 
+      linear-gradient(to bottom, rgba(255,255,255,0) 80%, rgba(255,255,255,1) 100%),
+      url('background.png') center/cover no-repeat;
+  }
+
+  h1 {
+    font-size: 2.5em;
+    margin-bottom: 0.2em;
+    color: white;
+    text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+  }
+  .white-bordered-text {
+      color: white;
+  }
+  .intro {
+    font-size: 1.2em;
+    margin-bottom: 2em;
+    color: white;
+    text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+  }
+  .gallery img {
+    max-width: 300px;
+    height: auto;
+    border-radius: 12px;
+    margin: 1em;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease;
+  }
+  .gallery img:hover {
+    transform: scale(1.05);
+  }
+  .overlay-box {
+    background: rgba(0, 0, 0, 0.2); 
+    backdrop-filter: blur(6px);  
+    -webkit-backdrop-filter: blur(6px); 
+    padding: 2em;
+    margin: 2em auto;
+    width: 95%;
+    max-width: 900px;
+    border-radius: 15px;
+    color: white;
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+  }
+  nav a{
+    color: #00e0ff;
+    font-weight: bold;
+  }
+  .demo-box {
+    background-color: #e0f7fa;
+    border-style: solid;
+    border-width: 3px;
+    border-color: #00796b;
+    border-top: 5px dashed #00695c;
+    border-right: 4px dotted #004d40;
+    border-bottom: 3px solid #00796b;
+    border-left: 2px double #004d40;
+    margin: 1em;
+    padding: 1em;
+    width: 80%;
+    height: auto;
+  }
+
+  .background-test {
+    background-image: url('background.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 200px;
+    width: 100%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+  }
+  
