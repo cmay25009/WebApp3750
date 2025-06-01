@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome to My Website</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            color: #333;
+            text-align: center;
+            padding: 2em;
+            min-height: 100vh;
+            background: 
+                linear-gradient(to bottom, rgba(255,255,255,0) 80%, rgba(255,255,255,1) 100%),
+                url('background.png') center/cover no-repeat;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+
+
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 0.2em;
+            color: white; /* Color Text*/
+
+            text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+        }
+        .white-bordered-text {
+            color: white;/* Color Text*/
+        }
+        .intro {
+            font-size: 1.2em;
+            margin-bottom: 2em;
+            color: white;
+            text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+        }
+        /*The profile*/
+        .gallery img {
+            max-width: 300px;
+            height: auto;
+            border-radius: 12px;
+            margin: 1em;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s ease;
+        }
+        /* Adds a gover effect over the image*/
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+        /* The container in between the page content and the background to
+            make it easier to read*/
+        .overlay-box {
+            background: rgba(0, 0, 0, 0.2); 
+            backdrop-filter: blur(6px);  
+            -webkit-backdrop-filter: blur(6px); 
+            padding: 2em;
+            margin: 2em auto;
+            width: 95%;
+            max-width: 900px;
+            border-radius: 15px;
+            border-style: solid;
+            border-top-style: dotted;
+            border-bottom-style: dashed;
+            border-width: 2px;
+            border-color: rgba(255, 255, 255, 0.5);
+            color: white;
+            box-shadow: 0 0 15px rgba(0,0,0,0.5);
+        }
+        nav a{
+            color: #00e0ff;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="overlay-box">
+        <header>
+            <h1>White text with a border created by using shadows!</h1>
+            <p class="intro">This text box is in an overlay container with 6px blur and .2 opacity to make this easier to read<br>
+            The top border uses a dotted style, while the bottom border is a dash style. The default style is solid, which is why the sides
+        are solid.<br><br>
+    This overlaay uses a width of 95% of the margin, but also has a max width of 700px so when on a large screen, it doesn't get absurdly large.
+
+</p>
+            <nav>
+                <a href="../index.html">Home</a> |
+                <a href="../CSS2/GroupCSS2.html">CSS2</a> |
+                <a href="../JavascriptEvents/prog04.html">Color Switcher</a>
+            </nav>
+            <div class="gallery">
+                <img src="me.jpg" alt="Photo of me">
+            </div>
+        </header>
+    </div>
+    <footer>
+        <p>Back to <a href="../index.html"><strong>Home</strong></a></p>
+    </footer>
+</body>
+
+</html>
