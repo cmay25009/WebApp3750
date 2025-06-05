@@ -1,3 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
@@ -10,8 +19,7 @@ body {
     url('background.png') center/cover no-repeat;
   background-attachment: fixed;
   background-repeat: no-repeat;
-
-
+  background-position-y: bottom;
 }
 
 h1{
@@ -93,11 +101,6 @@ h2{
   border-color: rgba(255, 255, 255, 0.5);
   color: white;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-}
-
-nav a {
-  color: #00e0ff;
-  font-weight: bold;
 }
 
 ul{
