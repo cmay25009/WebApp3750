@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
@@ -66,8 +68,10 @@ h2{
   background: rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
+  z-index: 1;
   padding: 2em;
   margin: 2em auto;
+  margin-top: 5em;
   width: 95%;
   max-width: 900px;
   border-radius: 15px;
@@ -82,20 +86,18 @@ h2{
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
   padding: 2em;
-  margin: 2em auto;
+  margin: 5em auto 2em auto;
+  margin-top: 5em;
   width: 95%;
   max-width: 900px;
   border-radius: 15px;
   border-style: solid;
-  border-top-style: dotted;
-  border-bottom-style: dashed;
   border-width: 2px;
   border-color: rgba(255, 255, 255, 0.5);
   color: white;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 *{
   margin: 0;
   padding: 0;
@@ -104,17 +106,22 @@ h2{
   font-family: 'Poppins', sans-serif;
 }
 .wrapper{
-  background: #171c24;
+  background: #14181f;
   position: fixed;
   width: 100%;
+  z-index: 9999;
   top: 0;
   left: 0;
 
 }
+.navbar{
+  z-index: 9999;
+}
 .wrapper nav{
   position: relative;
+  z-index: 999;
   display: flex;
-  margin: 0 auto;
+  margin: 5 auto;
   height: 70px;
   align-items: left;
   justify-content: space-between;
@@ -215,7 +222,7 @@ nav .content .links{
   position: absolute;
   background: #171c24;
   top: 80px;
-  z-index: -1;
+  z-index: 999;
   opacity: 0;
   visibility: hidden;
 }

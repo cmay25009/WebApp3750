@@ -1,3 +1,11 @@
+<!--
+  File: resume.html
+  Author: Christopher May
+  Date: 2025-06-04
+  Course: CPSC 3750 – Web Application Development
+  Purpose: A page to hold an example table pdf file along with 
+  information about me.
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,14 +14,21 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <div id="nav"></div>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      fetch('navbar.html')
+          .then(response => response.text())
+          .then(data => {
+              document.getElementById('nav').innerHTML = data;
+          });
+    });
+  </script>
   <div class="overlay-box">
     <header>
       <h1>Resume</h1>
-      <nav>
-        <a href="index.html">Home</a> |
-        <a href="Capstone.html">Capstone</a> |
-        <a href="resume.html">Resume</a>
-      </nav>
+      
+
     </header>
 
     <main>

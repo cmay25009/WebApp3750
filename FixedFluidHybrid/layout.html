@@ -7,6 +7,16 @@
   </head>
 
   <body>
+    <div id="nav"></div>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        fetch('../navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('nav').innerHTML = data;
+            });
+      });
+    </script>
        <header><img src="acmewidgets.jpg" alt="ACME Widgets
            LLC"/></header>
        <div id="wrapper">

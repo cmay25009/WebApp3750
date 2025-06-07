@@ -1,3 +1,11 @@
+<!--
+  File: index.html
+  Author: Christopher May
+  Date: 2025-06-04
+  Course: CPSC 3750 – Web Application Development
+  Purpose: The main page of my website, which includes a navigation bar 
+  and a welcome message.
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,9 +13,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Welcome to My Website</title>
   <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <div id="nav"></div>
+  <div class="navbar" id="nav"></div>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       fetch('navbar.html')
@@ -17,7 +23,9 @@
           });
     });
   </script>
-  <div class="overlay-box-b">
+</head>
+<body>
+  <div class="overlay-box">
     <header>
       <h1>Welcome to My Website!</h1>
       <p class="intro">My name is Christopher May. This is my website for CPSC 3750 Summer 2024.</p>

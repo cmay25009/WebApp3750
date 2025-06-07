@@ -1,12 +1,30 @@
+<!--
+  File: GroupCSS2.html
+  Author: Christopher May
+  Date: 2025-06-04
+  Course: CPSC 3750 – Web Application Development
+  Purpose: To fulfill the requirements of Group CSS2, this page includes a navigation bar,
+  a header with an introduction, an about me section, a gallery of images, and social media icons.
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Welcome to My Website</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="../style.css" />
 </head>
 <body>
+  <div id="nav"></div>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      fetch('../navbar.html')
+          .then(response => response.text())
+          .then(data => {
+              document.getElementById('nav').innerHTML = data;
+          });
+    });
+  </script>
   <div class="overlay-box-b">
     <header>
       <h1>Header</h1>
@@ -33,13 +51,6 @@
         </ul>
       </section>
       <main>
-        <h2>Nav Bar</h2>
-        <nav>
-          <a href="../index.html">Home</a> |
-          <a href="table.html">LINK TO TABLE</a> |
-          <a href="../CSS1/GroupCSS1.html">CSS1</a> |
-          <a href="../JavascriptEvents/prog04.html">Color Switcher</a>
-        </nav>
         <h2>Gallery</h2>
         <div class="gallery">
           <img src="pics\milo.jpg" alt="Milo">
@@ -59,7 +70,7 @@
     </header>
   </div>
   <footer>
-    <p><strong>Back to <a href="../index.html">CSS2</strong></a></p>
+    <p><strong>Back to <a href="/index.html">CSS2</strong></a></p>
   </footer>
 </body>
 </html>
