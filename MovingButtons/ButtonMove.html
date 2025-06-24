@@ -1,0 +1,40 @@
+<!--
+  File: ButtonMove.html
+  Author: Christopher May
+  Date: 2025-06-04
+  Course: CPSC 3750 – Web Application Development
+  Purpose: The main page of the Moving Buttons project
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Moving Buttons</title>
+    <link rel="stylesheet" href="css/ButtonMove.css" />
+</head>
+<body>
+    <div id="nav"></div>
+    
+    <div class="overlay-box">
+        <h1>Moving Buttons</h1>
+        <div id="controls">
+            <select id="colorSelect" aria-placeholder="Select">
+                <option value="red">Red</option>
+                <option value="green">Green</option>
+                <option value="blue">Blue</option>
+                <option value="yellow">Yellow</option>
+                <option value="white">White</option></select>
+            <button id="makeBtn">Make Button</button>
+            <button id="moveBtn">MOVE</button>
+            <span id="totalDisplay">Total: 0</span>
+        </div> 
+        <div id="viewing-area"></div>
+        <div id="results-container"></div>
+    </div>
+    <footer>
+        <p>Back to <a href="/"><strong>Home</strong></a></p>
+    </footer>
+    <script src="js/ButtonMove.js"></script>
+</body>
+</html>

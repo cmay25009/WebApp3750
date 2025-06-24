@@ -1,0 +1,36 @@
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  padding: 1em;
+  color: black;
+}
+
+input, button {
+  padding: 10px;
+  padding-left: 20px;
+  font-size: 16px;
+  margin: 10px;
+}
+
+.list-section {
+  display: flex;
+  flex-direction: row;
+  margin-top: 2em;
+  background: rgba(59,59,59, 0.8);
+  
+}
+
+.list-section div h3{
+  width: 45%;
+  padding: 1em;
+  border-radius: 4px;
+  color: #333;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}

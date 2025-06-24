@@ -1,3 +1,12 @@
+document.addEventListener('DOMContentLoaded', () => {
+        fetch('../navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('nav').innerHTML = data;
+            });
+        });
+        
+
 const redBtn = document.getElementById("redBtn");
 const greenBtn = document.getElementById("greenBtn");
 const blueBtn = document.getElementById("blueBtn");

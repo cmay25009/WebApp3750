@@ -1,67 +1,63 @@
-<!DOCTYPE html>
-<!-- Created By CodingNepal - www.codingnepalweb.com -->
-<html lang="en">
-<head>
+<!--
+  File: navbar.html
+  Author: Christopher May
+  Date: 2025-06-04
+  Course: CPSC 3750 – Web Application Development
+  Purpose: This is the navigation bar for my website, which includes links to various pages and a search box.
+  Notes: This gets embeded into the main pages for each page of the website.
+-->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>NavBar</title>
-  <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
-</head>
-<body>
+
   <div class="wrapper">
     <nav class="navbar">
       <div class="content">
         <ul class="links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="resume.html">Resume</a></li>
+          <li><a href="/index.html">Home</a></li>
           <li>
             <a href="#" class="desktop-link">Documents</a>
             <input type="checkbox" id="show-features">
             <label for="show-features">Documents</label>
             <ul>
-              <li><a href="#">Drop Menu 1</a></li>
-              <li><a href="#">Drop Menu 2</a></li>
-              <li><a href="#">Drop Menu 3</a></li>
-              <li><a href="#">Drop Menu 4</a></li>
+              <li><a href="/resume.html">Resume</a></li>
+              <li><a href="/capstone.html">Capstone</a></li>
+              <li><a href="/table.html">Table</a></li>
             </ul>
           </li>
           <li>
-            <a href="#" class="desktop-link">Programs</a>
+            <a href="#" class="desktop-link">Group Projects</a>
             <input type="checkbox" id="show-services">
-            <label for="show-services">Programs</label>
+            <label for="show-services">Group Projects</label>
             <ul>
-              <li><a href="#">Groups Projects</a></li>
-              <li>
-                <a href="#" class="desktop-link">More Items</a>
-                <input type="checkbox" id="show-items">
-                <label for="show-items">More Items</label>
-                <ul>
-                  <li><a href="CSS1/GroupCSS1.html">CSS1</a></li>
-                  <li><a href="CSS2/GroupCSS2.html">CSS2</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Assignments</a></li>
-              <li>
-                <a href="#" class="desktop-link">More Items</a>
-                <input type="checkbox" id="show-items">
-                <label for="show-items">More Items</label>
-                <ul>
-                  <li><a href="#">Sub Menu 1</a></li>
-                  <li><a href="#">Sub Menu 2</a></li>
-                  <li><a href="#">Sub Menu 3</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Projects</a></li>
-              <li>
-                <a href="#" class="desktop-link">Project 1</a>
-                <input type="checkbox" id="show-items">
-                <label for="show-items">Project 1</label>
-              </li>
+              <li><a href="/CSS1/GroupCSS1.html">CSS1</a></li>
+              <li><a href="/CSS2/GroupCSS2.html">CSS2</a></li>
             </ul>
           </li>
-          <li><a href="https://app.usemotion.com/meet/christopher-may/gywkzz2">Booking</a></li>
+          <li>
+            <a href="#" class="desktop-link">Exercises</a>
+            <input type="checkbox" id="show-items">
+            <label for="show-items">Assignments</label>
+            <ul>
+              <li><a href="/php/helloworld.php">PHP Hello World</a></li>
+              <li><a href="/DemoHTMLCSS/index.html">DemoHTMLCSS</a></li>
+              <li><a href="/FixedFluidHybrid/layout.html">FixedFluidHybrid</a></li>
+              <li><a href="/JavascriptEvents/prog04.html">JavascriptEvents</a></li>
+              <li><a href="/MovingButtons/ButtonMove.html">Moving Buttons</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">Projects</a>
+            <input type="checkbox" id="show-items">
+            <label for="show-items">Projects</label>
+            <ul>
+              <li><a href="/project1/">Project 1</a></li>
+              <li><a href="/ProgramExam1/">Project Exam 1</a></li>
+            </ul>
+          </li>
+          <li><a href="https://app.usemotion.com/meet/christopher-may/gywkzz2">Book a Meeting</a></li>
         </ul>
       </div>
       <label for="show-search" class="search-icon"><i class="fas fa-search"></i></label>
@@ -71,5 +67,3 @@
       </form>
     </nav>
   </div>
-</body>
-</html>
