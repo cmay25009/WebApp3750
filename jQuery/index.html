@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        <link rel="stylesheet" href="../navbar.css" />
+        <link rel="stylesheet" href="../style.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+        <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+
+        <script>
+        $(document).ready(function(){
+            $("div").not(".overlay-box").mouseenter(function(){
+                $(this).css("background-color", "yellow");
+                $(this).css("color", "black");
+            });
+
+            $("div").not(".overlay-box").mouseleave(function(){
+                $(this).css("background-color", "white");
+                $(this).css("color", "black");
+            });
+
+            $("#fadeDiv1").click(function(){
+                $("#div1").fadeOut(1000);
+            });
+            $("#fadeDiv2").click(function(){
+                $("#div2").fadeOut(1000);
+            });
+            $("#fadeDiv3").click(function(){
+                $("#div3").fadeOut(1000);
+            });
+
+            $("#date").datepicker();
+
+            $("#accordion").accordion();
+
+            $("#progressbar").progressbar({
+                value: 0,
+                
+            });
+
+            function testProgressBar(){
+                let pb = $("#progressbar");
+                pb.progressbar("value", 0);
+                let progress = 0;
+                let timer = setInterval(function(){
+                    progress += 5;
+                    pb.progressbar("value", progress);
+                    if(progress >= 100){
+                        clearInterval(timer);
+                    }
+                }, 1000)
+            }
+            
+            $("#testPB").click(function(){
+                testProgressBar();
+            })
+
+        });
+
+        </script>
+    </head>
+<body>
+    <div class="navbar" id="nav"></div>
+    
+    <div class="overlay-box">
+        <h1>Welcome to My Homepage</h1>
+
+        <p>This is a paragraph.</p>
+
+        <div id=div1 style="border: 1px solid black;">
+            <p>A paragraph in a div.</p>
+            <p>Another paragraph in a div.</p>
+        </div>
+        <br>
+
+        <div id=div2 style="border: 1px solid black;">
+            <p>A paragraph in another div.</p>
+            <p>Another paragraph in another div.</p>
+        </div>
+        <br>
+
+        <div id=div3 style="border: 1px solid black;">
+            <p>A paragraph in another div.</p>
+            <p>Another paragraph in another div.</p>
+        </div>
+
+        <button id="fadeDiv1">Fade Div 1</button>
+        <button id="fadeDiv2">Fade Div 2</button>
+        <button id="fadeDiv3">Fade Div 3</button>
+
+        <br>
+        
+        <p>Date: <input type="text" id="date"></p>
+
+        <br>
+
+        <div id="accordion">
+            <h4>Part 1</h4>
+            <div>
+                <p>This is the content of part 1</p>
+            </div>
+            <h4>Part 2</h4>
+            <div>
+                <p>This is the content of part 2</p>
+            </div>
+            <h4>Part 3</h4>
+            <div>
+                <p>This is the content of part 3</p>
+            </div>
+        </div>
+        <br>
+        <div id="progressbar"></div>
+        <button id="testPB">Test Progress Bar</button>
+    </div>
+    
+    <script src="../navbar.js"></script>
+</body>
+</html>
