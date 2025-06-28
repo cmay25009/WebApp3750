@@ -1,0 +1,57 @@
+<!--
+  File: GroupAudio.html
+  Author: Christopher May
+  Date: 2025-06-04
+  Course: CPSC 3750 – Web Application Development
+  Purpose: The main page for the Group Audio project, which includes a navbar and a welcome message.
+  This allows you to play the audio from the Week 7 Overview video 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Group: Audio</title>
+    <link rel="stylesheet" href="../navbar.css" />
+    <link rel="stylesheet" href="../style.css" />
+    <style>
+        audio {
+            width: 60%;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="navbar" id="nav"></div>
+    
+    <div class="overlay-box">
+        <header>
+            <h1>Welcome to the Group Audio Project</h1>
+        </header>
+        <main>
+            <div id="audio-player">
+                <h2>Audio Player</h2>
+                <p>Use the controller below to play the audio from the Week 7 Overview video.</p>
+                <br>
+                <audio controls>
+                    <source src="CPSC_3750_Week7_Overview.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+            <div class="dialogue-box">
+                <p>
+                    I used the controls attribute from HTML Audio because it satisfied
+                    all of the requirements for the project. However, I feel like this
+                    was a little too easy, so let me know if there is something
+                    more I need to add to fulfill the requirements of the project.
+                </p>
+            </div>
+        </main>
+        <footer>
+            <p>Back to <a href="/index.html">Home</a></p>
+        </footer>
+    </div>
+    <script src="../navbar.js"></script>
+    </body>
+</html>
