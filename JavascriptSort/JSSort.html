@@ -1,0 +1,79 @@
+<!--
+  File: JSSort.html
+  Author: Christopher May
+  Date: 2025-06-04
+  Course: CPSC 3750 – Web Application Development
+  Purpose: The page for the JavaScript Sort assignment. This page holds script that displays
+  a numbered list of names in alphabetical order, makes it so if the user presses Enter 
+  instead, the code executes without erasing the list
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>JavaScript Sort</title>
+  <link rel="stylesheet" href="../navbar.css"/>
+  <link rel="stylesheet" href="../style.css" />
+
+  <script>
+
+    // initialize the counter and the array
+    var numbernames=0;
+    var names = new Array();
+    function SortNames() {
+        // Get the name from the text field
+        thename=document.theform.newname.value;
+        document.theform.newname.value = "";
+        // Add the name to the array
+        names[numbernames]=thename.toUpperCase();
+        // Increment the counter
+        numbernames++;
+        // Sort the array
+        names.sort();
+
+        let numList = "";
+        for (let i = 0; i < numbernames; i++){
+            numList += (i + 1) + ". " + names[i] + "\n";
+        }
+
+        document.theform.sorted.value= numList;
+    }
+    
+    document.addEventListener("DOMContentLoaded", function(){
+        document.theform.newname.addEventListener("keypress", function(e) {
+            if(e.key === "Enter") {
+                e.preventDefault();
+                SortNames();
+            }
+        });
+    });
+    
+  </script>
+  
+</head>
+<body>
+  <div class="navbar" id="nav"></div>
+  <div class="overlay-box">
+    <header>
+      <h1>JavaScript Sort</h1>
+      <p>Enter two or more names in the field below,
+     and the sorted list of names will appear in the
+     text area.</p>
+     <form name="theform">
+     Name:
+     <input type="text" name="newname" size="20">
+     <input type="button" name="addname" value="Add"
+     onclick="SortNames();">
+     <br/>
+     <h2>Sorted Names</h2>
+     <textarea style="padding:10px" cols="60" rows="10" name="sorted">
+     The sorted names will appear here:
+     </textarea>
+     </form>
+    </header>
+  </div>
+
+  <script src="../navbar.js?v1.2"></script>
+</body>
+</html>
