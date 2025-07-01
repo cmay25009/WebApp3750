@@ -59,6 +59,7 @@ h3{
 
 }
 
+
 /* Adds a gover effect over the image*/
 .gallery img:hover {
   transform: scale(1.05);
