@@ -1,0 +1,118 @@
+<!--
+  File: GroupEvents.html
+  Author: Christopher May
+  Date: 2025-06-04
+  Course: CPSC 3750 – Web Application Development
+  Purpose: The main page for the Group Events project, which includes a navbar and a welcome message.
+  This allows you to play the audio from the Week 7 Overview video
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Group: Events</title>
+    <link rel="stylesheet" href="../navbar.css" />
+    <link rel="stylesheet" href="../style.css" />
+
+    <style>
+        .overlay-box {
+            background-color: rgba(51,51,51,0.4);  
+        }
+
+        .redZone {
+            width: 200px;
+            height: 200px;
+            display: inline-block;
+            vertical-align: top;
+            margin: 2em;
+            border: 2px solid black;
+            position: relative;
+            background-color: rgb(255, 0, 0);
+        }
+
+        .greenZone {
+            width: 200px;
+            height: 200px;
+            display: inline-block;
+            vertical-align: top;
+            margin: 2em;
+            border: 2px solid black;
+            position: relative;
+            background-color: rgb(0, 255, 0);
+        }
+
+        .box {
+            width: 50px;
+            height: 50px;
+            background-color: blue;
+            position: absolute;
+            top: 300px;
+            left: 260px;
+            border: 3px solid black;
+            transition: border-color 0.3s ease;
+        }
+
+        .hovered {
+            border-color: yellow !important;
+        }
+
+        .box.animate-drop {
+            animation: dropSuccess 0.5s forwards;
+        }
+
+        @keyframes dropSuccess {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.5) rotate(20deg);
+            }
+
+            100% {
+                transform: scale(1) rotate(0deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar" id="nav"></div>
+
+    <div id="overlay-box" class="overlay-box">
+        <header>
+            <h1>Welcome to the Group Events Project</h1>
+        </header>
+        <main>
+            <div id="Game1">
+                <h2>Game 1: Move the Box from the red zone to the green zone.</h2>
+                <div class="gameBox">
+                    <div class="redZone" id="redZone">
+                        Red Zone
+                    </div>
+                    <div class="greenZone" id="greenZone">
+                        Green Zone
+                    </div>
+                    <div class="box" id="box" draggable="true">Drag Me!</div>
+                </div>
+                <div id="output" class="dialogue-box">
+                    <h2>Adjust Overlay Opacity</h2>
+                    <input type="range" id="opacitySlider" min="0" max="100" value="40" />
+                    <p style="font-size:0.9em;">Use the slider to change the opacity of the overlay-box.
+                        Focusing the slider will highlight it.</p>
+                </div>
+            </div>
+
+        </main>
+        <footer>
+            <p>Back to <a href="/index.html">Home</a></p>
+        </footer>
+    </div>
+
+    <script src="GroupEvents.js?v=1.2"></script>
+    <script src="../navbar.js?v=1.2"></script>
+</body>
+
+</html>
