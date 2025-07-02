@@ -13,7 +13,6 @@
   z-index: 9999;
   top: 0;
   left: 0;
-  isolation: isolate;
 
 }
 .navbar{
@@ -23,18 +22,26 @@
   position: relative;
   z-index: 999;
   display: flex;
-  margin: 5 auto;
+  margin: 0 auto;
+  width: 100%;
   height: 70px;
-  align-items: left;
+  align-items: center;
   justify-content: space-between;
 }
+
 nav .content{
   display: flex;
   align-items: center;
 }
 nav .content .links{
-  margin-left: 80px;
+  margin-left: auto;
   display: flex;
+  flex-wrap: wrap;
+}
+
+nav .content .links li,
+nav .content .links li a {
+  min-width: 80px; 
 }
 .content .logo a{
   color: #fff;
@@ -62,9 +69,12 @@ nav .content .links{
 .content .links li label:hover{
   background: #323c4e;
 }
-
+.wrapper .search-icon {
+  right: 10px;
+}
 .wrapper .search-icon,
 .wrapper .menu-icon{
+  position: absolute;
   color: #fff;
   font-size: 18px;
   cursor: pointer;
@@ -81,9 +91,11 @@ nav .content .links{
 .wrapper .search-box{
   position: absolute;
   height: 100%;
-  max-width: calc(100% - 50px);
+  max-width: calc(100% - 70px);
   width: 100%;
   opacity: 0;
+  border-right: 2px;
+  border-right-color: #333;
   pointer-events: none;
   transition: all 0.3s ease;
 }
@@ -157,7 +169,9 @@ nav .content .links{
 .content .links ul li:hover ul{
   top: 0;
 }
-
+nav .content {
+  position: relative;
+}
 nav .content .links li a,
 nav .content .links li label {
   color: #fff;
@@ -168,26 +182,8 @@ nav .content .links li label {
   transition: all 0.3s ease;
 }
 
-/* Responsive code start */
-@media screen and (max-width: 1250px){
-  .wrapper nav{
-    max-width: 100%;
-    padding: 0 20px;
-  }
-  nav .content .links{
-    margin-left: 30px;
-  }
-  .content .links li a{
-    padding: 8px 13px;
-  }
-  .wrapper .search-box{
-    max-width: calc(100% - 100px);
-  }
-  .wrapper .search-box input{
-    padding: 0 100px 0 15px;
-  }
-}
-@media screen and (max-width: 900px){
+
+@media screen and (max-width: 1100px){
   .wrapper .menu-icon{
     display: block;
   }
@@ -199,10 +195,10 @@ nav .content .links li label {
     position: fixed;
     background: #14181f;
     height: 100%;
-    width: 100%;
     top: 70px;
     left: -100%;
     margin-left: 0;
+    width: fit-content;
     max-width: 350px;
     overflow-y: auto;
     padding-bottom: 100px;
@@ -227,15 +223,11 @@ nav .content .links li label {
     text-align: left;
   }
   /* dropdown responsive code start */
-  .content .links ul{
-    position: absolute;
-    top: 0;
-  }
+  .content .links ul,
   .content .links ul ul{
-    position: absolute;
+    position: static;
     top: 0;
     left: 100%;
-    margin-left: 1px;
   }
   .content .links #show-features:checked ~ ul,
   .content .links #show-services:checked ~ ul,
@@ -252,7 +244,7 @@ nav .content .links li label {
     line-height: 30px;
     border-radius: 5px!important;
     text-align: left;
-    left: 0;
+    left: 100%;
   }
 }
 @media screen and (max-width: 400px){
