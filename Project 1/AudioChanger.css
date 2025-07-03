@@ -1,0 +1,99 @@
+body{
+    background:
+        linear-gradient(to bottom, rgba(255, 255, 255, 0) 80%, rgb(0, 0, 0) 100%),
+        url('crowd.jpg') center/cover no-repeat;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+audio{
+    width: 100% ;
+}
+
+.container{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    background-color: transparent;
+    justify-content: space-between;
+    align-self: center;
+    margin-top: 2em; 
+    margin-bottom: 2em; 
+}
+
+input {
+    width: 100%;
+}
+
+button {
+    width: 150px;
+    padding: 0.25em;
+}
+
+button #fa-solid {
+    background: transparent;
+    border: none;
+    color: white
+}
+#timestampControls{
+    height: 32px;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+#timestampContainer {
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    align-items: top;
+    scrollbar-width: none;
+    padding-left: 2em;
+    padding-right: 2em;
+    position: relative;
+}
+
+#timestampControls::before,
+#timestampControls::after {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 32px;
+    align-self: center;
+    z-index: 100;
+
+}
+
+#timestampControls::before{
+    background: linear-gradient(to right, black, transparent);
+    left: 62px;
+}
+
+#timestampControls::after{
+    background: linear-gradient(to left, black, transparent);
+    right: 62px;
+}
+
+button#removeTS,
+button#addTS{
+    width: 32px;
+}
+
+button.timestamps {
+    width: fit-content;
+    min-width: 80px;
+    height: 32px;
+    flex-shrink: 0;
+}
+
+
+
+#FileDetails {
+    display: flex;
+    justify-content: left;
+    font-weight: bold;
+
+}
+
+#audioPlayer {
+    margin-top: 0.5em;
+}

@@ -3,8 +3,7 @@
     Author: Christopher May
     Date: 2025-06-20
     Course: CPSC 3750 – Web Application Development
-    Purpose: The main file for the program exam, which includes a navigation bar
-    and a 
+    Purpose: The main file for the main project
 -->
 
 <!DOCTYPE html>
@@ -12,35 +11,40 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Prime Number Sorter</title>
-  <link rel="stylesheet" href="/navbar.css" />
-  <link rel="stylesheet" href="table.css" />
-  <link rel="stylesheet" href="/style.css" />
+  <title>Audio Changer</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link rel="stylesheet" href="../navbar.css" />
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="AudioChanger.css" />
   
 </head>
 <body>
     <div class="navbar" id="nav"></div>
     
     <div class="overlay-box">
-        <h1>Prime Number Sorter</h1>
-        <div class="container">
-            <div class="controls">
-                <label form="input">Enter a number:</label>
-                <input type="number" id="numberInput" min="1" placeholder="e.g. 50" />
-                <button id="startBtn">Sort</button>
-            </div>
+        <h1>Audio Changer</h1>
+        <h2>Queen: Bohemian Rhapsody</h2>
+        <p>Because who doesn't like Queen</p>
         
-            <div class="list-section">
-              <div>
-                <h3>Prime Numbers</h3>
-                <ul id="primeList"></ul>
-              </div>
-              <div>
-                <h3>Non-Prime Numbers</h3>
-                <ul id="nonPrimeList"></ul>
-              </div>
-            </div>
+        <div class="container" id="timestampControls">
+            <button id="removeTS"><i class="fa-solid fa-minus"></i></button>
+            <div class="container" id="timestampContainer"></div>
+            <button id="addTS"><i class="fa-solid fa-plus"></i></button>
+        </div>
+        
+        
+        <p id="FileDetails">Filename: BohemianRhapsody.mp3</p>
+        <div class="container" id="audioPlayer">
+            <audio controls id="song" src="BohemianRhapsody.mp3" type="audio/mpeg"></audio>
+        </div>
+
+        <div class="container" id="controlContainer">
+            <button id="rewind"><i class="fa-solid fa-rotate-left"></i></button>
+            <button id="playPause"><i class="fa-solid fa-play"></i></button>
+            <button id="forward"><i class="fa-solid fa-rotate-right"></i></button>
         </div>
     </div>
-    <script src="prime.js"></script>
+    <script src="timestamp.js"></script>
+    <script src="../navbar.js?v=2"></script>
+    <script src="AudioChanger.js?v=2"></script>
 </body>
