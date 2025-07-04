@@ -6,10 +6,12 @@ body{
     background-repeat: no-repeat;
 }
 
+/* Forces audio item to full size*/
 audio{
     width: 100% ;
 }
 
+/* Makes some changes to my default container item*/
 .container{
     width: 100%;
     display: flex;
@@ -21,26 +23,27 @@ audio{
     margin-bottom: 2em; 
 }
 
-input {
-    width: 100%;
-}
-
+/* Makes some changes to my default button item*/
 button {
     width: 150px;
     padding: 0.25em;
 }
 
+/* Represents buttons that contain icons from font awesome*/
 button #fa-solid {
     background: transparent;
     border: none;
     color: white
 }
+
+/*Specific to the rewind, play/pause, and forward button*/
 #timestampControls{
     height: 32px;
     margin-top: 0.5em;
     margin-bottom: 0.5em;
 }
 
+/*Container for timestamp scrollwheel*/ 
 #timestampContainer {
     overflow-x: auto;
     overflow-y: hidden;
@@ -52,6 +55,7 @@ button #fa-solid {
     position: relative;
 }
 
+/*Styling the fade to give 3D illusion*/
 #timestampControls::before,
 #timestampControls::after {
     content: "";
@@ -73,20 +77,25 @@ button #fa-solid {
     right: 62px;
 }
 
+/*Forces TS update buttons*/
 button#removeTS,
 button#addTS{
     width: 32px;
 }
 
+/*specific for timestamp buttons*/
 button.timestamps {
     width: fit-content;
     min-width: 80px;
     height: 32px;
     flex-shrink: 0;
 }
-
-
-
+/*Second stage*/
+button.timestamps.active {
+    background-color: #333;
+    color: white;
+}
+/*File name for song*/
 #FileDetails {
     display: flex;
     justify-content: left;
@@ -94,6 +103,13 @@ button.timestamps {
 
 }
 
+/*Spacing*/
 #audioPlayer {
     margin-top: 0.5em;
+}
+
+/*Further details and instructions*/
+.instructions {
+    display: flex;
+    justify-content: left;
 }

@@ -3,7 +3,10 @@
     Author: Christopher May
     Date: 2025-06-20
     Course: CPSC 3750 – Web Application Development
-    Purpose: The main file for the main project
+    Purpose: The main file for the main project 1. This page resembles an audio player with an example song
+    as Bohemian Rhapsody, by Queen. It allows the user to play/pause, rewind, change volume, and create timestamps
+    Notes:
+    Uses Font Awesome for icon, imports navbar and default styles from the home directory. 
 -->
 
 <!DOCTYPE html>
@@ -26,23 +29,41 @@
         <h2>Queen: Bohemian Rhapsody</h2>
         <p>Because who doesn't like Queen</p>
         
+        <!--
+            Container for the timestamps. I didn't like the visuals of the default scrollbar, so I disabled it and enabled using your
+            scrollwheel for when the mouse is hovering over the container. Supposed to slightly resemble a scrollwheel for selection to make the
+            view more implicit. 
+
+            Minus: Removes the currently selected timestamp
+
+            Plus: Adds timestamp at current time
+        -->
         <div class="container" id="timestampControls">
             <button id="removeTS"><i class="fa-solid fa-minus"></i></button>
             <div class="container" id="timestampContainer"></div>
             <button id="addTS"><i class="fa-solid fa-plus"></i></button>
         </div>
         
-        
+        <!-- Audio Player Container-->
         <p id="FileDetails">Filename: BohemianRhapsody.mp3</p>
         <div class="container" id="audioPlayer">
             <audio controls id="song" src="BohemianRhapsody.mp3" type="audio/mpeg"></audio>
         </div>
 
+        <!-- Container for the buttons-->
         <div class="container" id="controlContainer">
             <button id="rewind"><i class="fa-solid fa-rotate-left"></i></button>
             <button id="playPause"><i class="fa-solid fa-play"></i></button>
             <button id="forward"><i class="fa-solid fa-rotate-right"></i></button>
         </div>
+        <p class="instructions"><strong>Controls:</strong></p>
+        <p class="instructions">Space: Play/Pause</p>
+        <p class="instructions">Left Arrow: Rewind</p>
+        <p class="instructions">Right Arrow: Forward</p>
+        <br>
+        <p class="instructions">Click the Plus to add a timestamp for the current time. You can now click this button to listen</p>
+        <p class="instructions">to the selected section. You can scroll through all of your created timestamps with the scrollwheel</p>
+        <p class="instructions">when hovering over the Playlist bar</p>
     </div>
     <script src="timestamp.js"></script>
     <script src="../navbar.js?v=2"></script>
