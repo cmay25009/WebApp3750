@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hangman Game</title>
+    <link rel="stylesheet" href="hangman.css">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../navbar.css">
+</head>
+
+<body>
+    <div id="nav" class="navbar"></div>
+
+    <div class="overlay-box">
+        <h1>Hangman Game</h1>
+        <p>Developed by Christopher May</p>
+        <input type="checkbox" id="cheatMode">Cheat Mode
+        <div id="wordToGuess"></div>
+        <img id="gallowsImage" src="gallows/1.png" alt="Gallows" style="width:200px;">
+        <div id="letters"></div>
+        <button onclick="startGame()">Start New Game</button>
+    </div>
+    <script src="script.js"></script>
+    <script src="../navbar.js"></script>
+</body>
+
+</html>

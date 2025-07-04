@@ -1,0 +1,32 @@
+body {
+   font-family: Arial, sans-serif;
+   text-align: center;
+}
+
+#wordToGuess {
+   margin: 10px;
+   font-size: 24px;
+}
+
+#letters {
+   display: grid;
+   grid-template-columns: repeat(5, 1fr);
+   grid-gap: 10px;
+   margin: 10px auto;
+   justify-items: center;
+   width: 250px;
+}
+
+#letters button:disabled {
+   background-color: #333;
+}
+
+#letters button {
+   margin: 2px;
+   padding: 10px;
+   width: 40px;
+}
+
+.hidden {
+   visibility: hidden;
+}
