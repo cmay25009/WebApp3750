@@ -1,0 +1,58 @@
+<!--
+  File: index.html
+  Author: Christopher May
+  Date: 2025-06-04
+  Course: CPSC 3750 – Web Application Development
+  Purpose: A page to hold an example table pdf file along with 
+  information about me.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>AJAX & Handles</title>
+  <link rel="stylesheet" href="../navbar.css" />
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="main.css" />
+
+</head>
+<body>
+  <div class="navbar" id="nav"></div>
+  <div class="overlay-box">
+    <main>
+        <h1>JSON and AJAX</h1>
+        <button id="btn">Fetch Info for 3 New Animals</button>
+        <div id="animal-info"></div>
+    </main>
+
+    <script id="petsTemplate" type="text/x-handlebars-template">
+      {{#each pets}}
+        <div class="pet">
+          <div class="photo-column">
+            <img src="{{photo}}">
+          </div>
+
+          <div class="info-column">
+            <h2>{{name}} <span class="species">({{species}})</span></h2>
+            <p>Age: {{calculateAge birthYear}}</p>
+
+            {{#if favFoods}}
+            <h4 class="headline-bar">Favorite Foods</h4>
+            <ul class="favorite-foods">
+              {{#each favFoods}}
+                <li>{{this}}</li>
+              {{/each}}
+            </ul>
+            {{/if}}
+
+          </div>
+        </div>
+      {{/each}}
+    </script>
+    <p>Back to <a href="/index.html">Home</a></p>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.min.js"></script>
+  <script src="../navbar.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

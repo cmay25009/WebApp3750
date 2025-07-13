@@ -1,0 +1,29 @@
+[
+  {
+    "name": "Kitty",
+    "species" : "cat",
+    "photo": "Kitty.jpg",
+    "foods": {
+      "likes": ["fresh food"],
+      "dislikes": ["stale food"]
+    }
+  },
+  {
+    "name": "Pupster",
+    "species" : "dog",
+    "photo": "Pupster.jpg",
+    "foods": {
+      "likes": ["tomatoes", "peas"],
+      "dislikes": ["bread"]
+    }
+  },
+  {
+    "name": "Tux",
+    "species" : "cat",
+    "photo": "Tux.jpg",
+    "foods": {
+      "likes": ["fancy dishes"],
+      "dislikes": ["basic cat food"]
+    }
+  }
+]
