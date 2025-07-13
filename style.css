@@ -125,6 +125,17 @@ section li {
     margin-bottom: 2em;
 }
 
+.button-container{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    background-color: transparent;
+    justify-content: space-between;
+    align-self: center;
+    margin-top: 2em; 
+    margin-bottom: 2em; 
+}
+
 .fa {
   padding: 5px;
   font-size: 30px;

@@ -1,0 +1,119 @@
+<!--
+  File: index.html
+  Author: Christopher May
+  Date: 2025-06-04
+  Course: CPSC 3750 – Web Application Development
+  Purpose: A page to hold an example table pdf file along with 
+  information about me.
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>File I/O</title>
+    <link rel="stylesheet" href="../navbar.css" />
+    <link rel="stylesheet" href="../style.css" />
+    <style>
+        #ui {
+            border: 0;
+            border-radius: 20px;
+            box-shadow: 0, 0, 30px rgba(0, 0, 0, 0.4);
+            width: 70%;
+        }
+        .button-container{
+            justify-content: center;
+            margin: 0;
+        }
+        button {
+            margin: 5px;
+            padding: 5px;
+        }
+        .update {
+            font-weight: bold;
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="nav"></div>
+    <div class="overlay-box">
+        <header>
+            <h1>File I/O</h1>
+            <div class="dialogue-box" id="ui">
+                <form id="checkForm" method="post" action="io.php">
+                    <label>Enter numbers: </label>
+                    <input id="numbers" style="padding: 2px;" type="text" name="numbers">
+                    <input type="hidden" name="action" value="check">
+                    <button type="submit" name="action" value="check">CHECK THESE NUMBERS</button>
+                </form>
+                <div id="update"></div>
+                <form id="viewForm" method="post" action="io.php">
+                    <button type="submit" name="action" value="armstrong">ARMSTRONG</button>
+                    <button type="submit" name="action" value="fibonacci">FIBONACCI</button>
+                    <button type="submit" name="action" value="prime">PRIME</button>
+                    <button type="submit" name="action" value="none">NONE</button>
+                    <button type="submit" name="action" value="reset" style="background-color: red; color: white;">RESET</button>
+                </form>
+            </div>
+        </header>
+        <main>
+            <div id="results" class="dialogue-box"></div>
+            <script>
+                document.getElementById("checkForm").addEventListener("submit", function (e) {
+                    e.preventDefault();
+                    console.log("Submitting checkForm...");
+                    const formData = new FormData(this);
+                    fetch("io.php", {
+                        method: "POST",
+                        body: formData
+                    })
+                        .then(res => res.text())
+                        .then(data => {
+                            console.log("Check response:", data); 
+                            document.getElementById("update").innerHTML = data;
+                            document.getElementById("update").style.color = "green";
+                        })
+                        .catch(err => {
+                            console.error("Error:", err);
+                            document.getElementById("update").innerHTML = err.message;
+                            document.getElementById("update").style.color = "red";
+                        });
+                    });
+
+                document.getElementById("viewForm").addEventListener("submit", function (e) {
+                    e.preventDefault();
+                    console.log("Submitting viewForm...");
+                    
+                    const clickedButton = e.submitter;
+                    const actionValue = clickedButton.value;
+
+                    const formData = new FormData();
+                    formData.append("action", actionValue);
+
+                    fetch("io.php", {
+                        method: "POST",
+                        body: formData
+                    })
+                        .then(res => res.text())
+                        .then(data => {
+                            console.log("View response:", data);
+                            document.getElementById("results").innerHTML = data;
+                        })
+                        .catch(err => {
+                            console.error("Error:", err);
+                            document.getElementById("update").innerHTML = err.message;
+                            document.getElementById("update").style.color = "red";
+                        });;
+                    });
+            </script>
+            
+        <p>Back to <a href="/index.html">Home</a></p>
+        </main>
+        
+    </div>
+    <script src="../navbar.js"></script>
+</body>
+
+</html>
