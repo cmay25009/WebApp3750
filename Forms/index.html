@@ -1,0 +1,89 @@
+<!--
+  File: resume.html
+  Author: Christopher May
+  Date: 2025-06-04
+  Course: CPSC 3750 – Web Application Development
+  Purpose: A page to hold an example table pdf file along with 
+  information about me.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Forms</title>
+  <link rel="stylesheet" href="../navbar.css" />
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+  <div class="navbar" id="nav"></div>
+  <div class="overlay-box">
+    <header>
+      <h1>Group: Forms</h1>
+    </header>
+
+    <form action="process_form.php" method="post" enctype="multipart/form-data">
+      <p><strong>Text:</strong><br>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" />
+      </p>
+
+      <p><strong>Password:</strong><br>
+        <label for="pwd">Enter Password:</label>
+        <input type="password" id="pwd" name="pwd" />
+      </p>
+    
+      <p><strong>Textarea:</strong><br>
+        <label for="bio">Tell us about yourself:</label><br>
+        <textarea id="bio" name="bio" rows="5" cols="40"></textarea>
+      </p>
+      
+      <p><strong>Array of Check Boxes:</strong><br>
+        <label><input type="checkbox" name="userType[]" value="Student" /> Student</label><br>
+        <label><input type="checkbox" name="userType[]" value="Employee" /> Employee</label><br>
+        <label><input type="checkbox" name="userType[]" value="Staff" /> Staff</label>
+        <label><input type="checkbox" name="userType[]" value="Guest" /> Guest</label>
+      </p>
+
+      <p><strong>Hidden Data:</strong><br>
+        <input type="hidden" name="studentID" value="studentID" />
+      </p>
+    
+      <p><strong>Radio Buttons:</strong><br>
+        <label><input type="radio" name="gender" value="Male" /> Male</label><br>
+        <label><input type="radio" name="gender" value="Female" /> Female</label><br>
+        <label><input type="radio" name="gender" value="Other" /> Other</label>
+      </p>
+    
+      <p><strong>Selection List:</strong><br>
+        <label for="country">Select your country:</label><br>
+        <select name="country" id="country">
+          <option value="USA">USA</option>
+          <option value="UK">United Kingdom</option>
+          <option value="Canada">Canada</option>
+          <option value="Other">Other</option>
+        </select>
+      </p>
+    
+      <p><strong>File:</strong><br>
+        <label for="upload">Upload Transcript:</label>
+        <input type="file" name="upload" id="upload" />
+      </p>
+    
+      <p><strong>URL:</strong><br>
+        <label for="homepage">Your Website:</label>
+        <input type="url" name="homepage" id="homepage" />
+      </p>
+    
+      <p>
+        <input type="submit" value="Submit Form" />
+        <input type="reset" value="Reset" />
+      </p>
+    </form>
+  </div>
+
+  <footer>
+    <p>Back to <a href="../index.html">Home</a></p>
+  </footer>
+  <script src="../navbar.js"></script>
+</body>
+</html>
