@@ -1,0 +1,60 @@
+[draggable] {
+    user-select: none;
+    -webkit-user-drag: element;
+}
+
+#buttons button {
+    margin: 5px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+
+
+#list-container {
+    max-height: 400px;
+    overflow-y: auto;
+    border: 1px solid black;
+    padding: 10px;
+    margin: 10px auto;
+    align-items: center;
+    width: fit-content;
+    background-color: rgba(51, 51, 51, 0.8);
+    color: black;
+    border-radius: 10px;
+    text-align: center;
+}
+
+#columns {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.dialogue-box {
+    min-height: 200px;
+    min-width: 100%;
+}
+
+.dialogue-box.over {
+    background-color: #eef;
+    border-color: #00aaff;
+}
+
+.column {
+    width: 150px;
+    padding: 5px;
+    text-align: center;
+    cursor: move;
+    border-radius: 10px;
+    color: black;
+}
+
+.column.dragElem {
+    opacity: 0.4;
+}
+
+.column.over {
+    border-top: 2px solid blue;
+}
