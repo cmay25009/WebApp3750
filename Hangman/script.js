@@ -92,5 +92,4 @@ document.addEventListener("keydown", function (e) {
     }
 });
 
-// Initially start the game
 startGame();

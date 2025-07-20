@@ -1,0 +1,69 @@
+<!--
+  File: index.html
+  Author: Christopher May
+  Date: 2025-06-04
+  Course: CPSC 3750 – Web Application Development
+  Purpose: The main page of my website, which includes a navigation bar 
+  and a welcome message.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Welcome to My Website</title>
+  <link rel="stylesheet" href="../navbar.css"/> 
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="p2.css" />
+  
+</head>
+<body>
+  <div class="navbar" id="nav"></div>
+  <div class="overlay-box">
+    <h2>Using Spotify API</h2>
+    <form class="button-container" id="searchWrapper">
+        <input type="text" id="songSearch" placeholder="Search here">
+        <button id="search" type="submit">Search</button>
+    </form>
+    <h4>Search Types:</h4>
+    <form class="button-container" id="filterWrapper">
+        <input type="checkbox" id="artist" value="artist">artist
+        <input type="checkbox" id="album" value="album">album
+        <!-- <input type="checkbox" id="playlist" value="playlist">playlist -->
+        <input type="checkbox" id="track" value="track">track
+        <input type="checkbox" id="show" value="show">show
+    </form>
+
+    <div class="container">
+      <div class="top-section">
+        <div id="results" class="dialogue-box"></div>
+        <div class="side-panel">
+          <div id="about" class="about-box">
+            <h3>About</h3>
+            <p>This page allows you to search for Spotify content like artists, albums, tracks, shows, episodes, and
+              audiobooks.</p>
+            <p>Developed by Christopher May for CPSC 3750 at Clemson University.</p>
+          </div>
+          <div id="stats" class="stats-box">
+            <h3>Statistics</h3>
+            <p>Total results: <span id="resultCount">0</span></p>
+            <p>Search duration: <span id="searchDuration">0 ms</span></p>
+            <p>Top artist: <span id="topArtist">N/A</span></p>
+            <p>Top track: <span id="topTrack">N/A</span></p>
+            <p>Average track length: <span id="avgTrackDuration">N/A</span></p>
+            <p>Track count: <span id="trackCount">0</span></p>
+            <p>Artist count: <span id="artistCount">0</span></p>
+            <p>Album count: <span id="albumCount">0</span></p>
+            <p>Show count: <span id="showCount">0</span></p>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+
+
+  <script src="../navbar.js"></script>
+  <script src="p2.js"></script>
+</body>
+</html>

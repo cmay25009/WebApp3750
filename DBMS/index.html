@@ -1,0 +1,37 @@
+<!--
+  File: index.html
+  Author: Christopher May
+  Date: 2025-06-04
+  Course: CPSC 3750 – Web Application Development
+  Purpose: The main page of my website, which includes a navigation bar 
+  and a welcome message.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Welcome to My Website</title>
+  <link rel="stylesheet" href="/navbar.css?v=2"/>
+  <link rel="stylesheet" href="/style.css?v=2" />
+  
+  <style>
+    .dialogue-box#names {
+      width: fit-content;
+      justify-content: left;
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar" id="nav"></div>
+  <div class="overlay-box">
+        <input id="name" type="text" placeholder="Enter your name"/>
+        <button type="button" onclick="addName()">Add Name</button>
+        <button type="button" onclick="showNames()">Show Table</button>
+        <div id="output" class="dialogue-box"></div>
+  </div>
+  <script src="/navbar.js?v=2"></script>
+  <script src="DBTest.js?v=2"></script>
+</body>
+</html>

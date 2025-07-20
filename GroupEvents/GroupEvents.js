@@ -2,6 +2,8 @@ const box = document.getElementById("box");
 const redZone = document.querySelector(".redZone");
 const greenZone = document.querySelector(".greenZone");
 
+
+
 let currentZone = "red";
 
 box.addEventListener("mouseenter", function () {
