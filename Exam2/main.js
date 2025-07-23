@@ -19,12 +19,12 @@ function renderList(words) {
     container.innerHTML = "";
     const sorted = words.sort((a, b) => a.length - b.length);
     sorted.forEach(word => {
-        const li = document.createElement("li");
-        li.className = "column";
-        li.draggable = true;
-        li.textContent = word;
-        addDnDHandlers(li);
-        container.appendChild(li);
+        const btn = document.createElement("button");
+        btn.className = "column";
+        btn.draggable = true;
+        btn.textContent = word;
+        DragDrop(btn);
+        container.appendChild(btn);
     });
 }
 
@@ -38,31 +38,11 @@ function DragDrop(elem) {
         elem.classList.add("over");
     });
     elem.addEventListener("dragleave", () => elem.classList.remove("over"));
-    const dropZone = document.querySelector(".dialogue-box");
-
-    dropZone.addEventListener("dragover", e => {
-        e.preventDefault();
-        dropZone.classList.add("over");
-    });
-
-    dropZone.addEventListener("dragleave", () => {
-        dropZone.classList.remove("over");
-    });
-
-    dropZone.addEventListener("drop", e => {
-        e.preventDefault();
-        const data = e.dataTransfer.getData("text/html");
-        dropZone.insertAdjacentHTML("beforeend", data);
-        addDnDHandlers(dropZone.lastElementChild);
-        dropCount++;
-        document.getElementById("dropCount").textContent = dropCount;
-        dropZone.classList.remove("over");
-    });
 
     elem.addEventListener("dragend", () => elem.classList.remove("dragElem"));
 }
 
-const dropZone = document.getElementById("dialogue-box");
+const dropZone = document.getElementById("dropZone");
 
 dropZone.addEventListener("dragover", (e) => {
     e.preventDefault();
@@ -76,8 +56,10 @@ dropZone.addEventListener("dragleave", () => {
 dropZone.addEventListener("drop", (e) => {
     e.preventDefault();
     const data = e.dataTransfer.getData("text/html");
-    dropZone.insertAdjacentHTML("beforeend", data);
-    addDnDHandlers(dropZone.lastElementChild);
+    const columns = document.getElementById("columns");
+    columns.insertAdjacentHTML("beforeend", data);
+    console.log("Adding: " + data);
+    DragDrop(columns.lastElementChild);
     dropCount++;
     document.getElementById("dropCount").textContent = dropCount;
     dropZone.classList.remove("over");
