@@ -1,0 +1,106 @@
+<!--
+  File: index.html
+  Author: Christopher May
+  Date: 2025-07-23
+  Course: CPSC 3750 – Web Application Development
+  Purpose: Using the source code from chapter 18, I created a db using PHP and SQL that has these fields in a table called Person: first name, last name, email address
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Welcome to My Website</title>
+  <link rel="stylesheet" href="/navbar.css"/>
+  <link rel="stylesheet" href="../style.css" />
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      fetch('/navbar.html')
+          .then(response => response.text())
+          .then(data => {
+              document.getElementById('nav').innerHTML = data;
+          });
+      
+      fetch('makeDBOBJ.php');
+      
+      fetch('addPerson.php', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+        body: 'submit=init'
+      })
+        .then(response => response.text())
+        .then(() => {
+          console.log("Database initialized.");
+        });
+    });
+
+    function resetDB() {
+      fetch('addPerson.php', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+        body: 'submit=init'
+      });
+    }
+
+    function displayTable(e) {
+      e.preventDefault();
+
+      fetch('addPerson.php', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+        body: `submit=display`
+      })
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('displayNames').innerHTML = data;
+      });
+    }
+
+    function searchLastName(e) {
+      e.preventDefault(); 
+      const searchValue = document.getElementById('searchLast').value;
+
+      fetch('addPerson.php', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+        body: `submit=search&searchLast=${encodeURIComponent(searchValue)}`
+      })
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('displayNames').innerHTML = data;
+      });
+
+    }
+    
+  </script>
+  
+</head>
+<body>
+  <div class="navbar" id="nav"></div>
+
+  <div class="overlay-box">
+    <form action="addPerson.php" method="POST">
+      <p><label >Add Person:</label></p><br>
+      <p>First Name: <input type="text" id="fName" name="fname" required></p>
+      <p>Last Name: <input type="text" id="lname" name="lname" required></p>
+      <p>Email: <input type="text" id="email" name="email" required></p>
+      <button type="submit" name="submit" value="add">Add Name</button>
+    </form>
+
+    <form onsubmit="displayTable(e)" method="POST">
+       <button type="submit" name="submit">Show Table</button>
+    </form>
+   
+
+    <form onsubmit="searchLastName(e)">
+      <p><label >Search:</label><br>
+      <input type="text" id="searchLast" name="searchLast"></p>
+      <button type="submit" name="submit" value="search">Search</button>
+    </form>
+    <div id="displayNames" class="dialogue-box">
+
+    </div>
+  </div>
+</body>
+</html>

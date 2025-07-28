@@ -1,9 +1,6 @@
 <?php
 
-$servername = "localhost";
-$username = "u516132945_cmmay";
-$password = "CBpizza!9";
-$dbname = "u516132945_WebApp";
+require_once 'config.php';
 
 $db = new mysqli($servername, $username, $password, $dbname);
 
